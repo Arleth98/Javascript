@@ -5,4 +5,167 @@ $(function(){var t,i,s,e;$(".ripplelink").click(function(h){0===$(this).find(".i
 /Pager
 $(document).ready(function(){var e=$("a.blog-pager-older-link").attr("href");$("a.blog-pager-older-link").load(e+" .post-title:first",function(){var e=$("a.blog-pager-older-link").text();$("a.blog-pager-older-link").text(e)});var r=$("a.blog-pager-newer-link").attr("href");$("a.blog-pager-newer-link").load(r+" .post-title:first",function(){var e=$("a.blog-pager-newer-link:first").text();$("a.blog-pager-newer-link").text(e)})});
 // Pesan komentar
-function cdClear(){var e=document.getElementById("codes");e.value="",e.focus();for(var t=document.querySelectorAll("#cvrt3, #cvrt4, #cvrt5, #cvrt6, #cvrt7, #cvrt8, #cvrt9, #cvrt10, #cvrt11"),c=0;c<t.length;c++)t[c].disabled=!1}function preConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),o=document.getElementById("opt3"),n=document.getElementById("opt4"),d=document.getElementById("opt5"),r=document.getElementById("opt10");t=t.replace(/\t/g,"    "),r.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),o.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=t.replace(/^/,"<pre>"),t=t.replace(/$/,"</pre>"),e.value=t,e.focus(),e.select())}function codeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),o=document.getElementById("opt3"),n=document.getElementById("opt4"),d=document.getElementById("opt5"),r=document.getElementById("opt11");t=t.replace(/\t/g,"    "),r.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),o.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=t.replace(/^/,"<code>"),t=t.replace(/$/,"</code>"),e.value=t,e.focus(),e.select())}function precodeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),o=document.getElementById("opt3"),n=document.getElementById("opt4"),d=document.getElementById("opt5"),r=document.getElementById("opt12");t=t.replace(/\t/g,"    "),r.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),o.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=t.replace(/^/,"<pre><code>"),t=t.replace(/$/,"</code></pre>"),e.value=t,e.focus(),e.select())}function spoilerConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt13");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<spoiler>"),t=t.replace(/$/,"</spoiler>"),e.value=t,e.focus(),e.select())}function strongConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt6");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<strong>"),t=t.replace(/$/,"</strong>"),e.value=t,e.focus(),e.select())}function emConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt7");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<em>"),t=t.replace(/$/,"</em>"),e.value=t,e.focus(),e.select())}function uConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt8");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<u>"),t=t.replace(/$/,"</u>"),e.value=t,e.focus(),e.select())}function strikeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt9");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<strike>"),t=t.replace(/$/,"</strike>"),e.value=t,e.focus(),e.select())}function embedConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt20");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,'<iframe src="https://embed.disqus.com/p/'),t=t.replace(/$/,'" style="border:0;width:100%;height:300px;" seamless="seamless" scrolling="no" allowtransparency="true"></iframe>'),e.value=t,e.focus(),e.select())}function toggleNavPanel(e){var t=document.getElementById(e),c=document.getElementById("tombol-pesan"),l="block";t.style.display==l?(t.style.display="none",c.innerHTML="<i class='fa fa-plus-square-o'></i>"):(t.style.display="block",c.innerHTML="<i class='fa fa-minus-square-o'></i>")}function toggleNavPanel2(e){var t=document.getElementById(e),c=document.getElementById("parser-button"),l="block";t.style.display==l?(t.style.display="none",c.innerHTML="Show Parser Box"):(t.style.display="block",c.innerHTML="Hide Parse Box")}
+function cdClear2() {
+  var wtarea = document.getElementById('codes2');
+  wtarea.value = '';
+  wtarea.focus();
+  var clears = document.querySelectorAll('#cvrt3, #cvrt4, #cvrt5, #cvrt6, #cvrt7, #cvrt8, #cvrt9, #cvrt10, #cvrt11')
+  for (var i = 0; i < clears.length; i++)
+{
+  clears[i].disabled = false,document.getElementById("btnInfo2")
+        .style.display = "none",document.getElementById("button-link2")
+        .style.display = "none"
+}
+}
+
+function preConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt7 = document.getElementById('opt7'),
+    opt8 = document.getElementById('opt8'),
+    opt9 = document.getElementById('opt9'),
+    opt10 = document.getElementById('opt10'),
+    opt11 = document.getElementById('opt11'),
+    opt16 = document.getElementById('opt16');
+  cv = cv.replace(/\t/g, "    ");
+ if (opt16.checked) { if (opt7.checked) cv = cv.replace(/&/g, "&amp;");
+  if (opt8.checked) cv = cv.replace(/'/g, "&#039;");
+  if (opt9.checked) cv = cv.replace(/"/g, "&quot;");
+  if (opt10.checked) cv = cv.replace(/</g, "&lt;");
+  if (opt11.checked) cv = cv.replace(/>/g, "&gt;");
+  cv = cv.replace(/^/, "<pre>");
+      cv = cv.replace(/$/, "</pre>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function codeConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt7 = document.getElementById('opt7'),
+    opt8 = document.getElementById('opt8'),
+    opt9 = document.getElementById('opt9'),
+    opt10 = document.getElementById('opt10'),
+    opt11 = document.getElementById('opt11'),
+    opt17 = document.getElementById('opt17');
+  cv = cv.replace(/\t/g, "    ");
+  if (opt17.checked) { if (opt7.checked) cv = cv.replace(/&/g, "&amp;");
+  if (opt8.checked) cv = cv.replace(/'/g, "&#039;");
+  if (opt9.checked) cv = cv.replace(/"/g, "&quot;");
+  if (opt10.checked) cv = cv.replace(/</g, "&lt;");
+  if (opt11.checked) cv = cv.replace(/>/g, "&gt;");
+  cv = cv.replace(/^/, "<code>");
+      cv = cv.replace(/$/, "</code>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function precodeConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt7 = document.getElementById('opt7'),
+    opt8 = document.getElementById('opt8'),
+    opt9 = document.getElementById('opt9'),
+    opt10 = document.getElementById('opt10'),
+    opt11 = document.getElementById('opt11'),
+    opt18 = document.getElementById('opt18');
+  cv = cv.replace(/\t/g, "    ");
+  if (opt18.checked) { if (opt7.checked) cv = cv.replace(/&/g, "&amp;");
+  if (opt8.checked) cv = cv.replace(/'/g, "&#039;");
+  if (opt9.checked) cv = cv.replace(/"/g, "&quot;");
+  if (opt10.checked) cv = cv.replace(/</g, "&lt;");
+  if (opt11.checked) cv = cv.replace(/>/g, "&gt;");
+  cv = cv.replace(/^/, "<pre><code>");
+      cv = cv.replace(/$/, "</code></pre>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function spoilerConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt19 = document.getElementById('opt19')
+  cv = cv.replace(/\t/g, "    ");
+    if (opt19.checked) {cv = cv.replace(/^/, "<spoiler>");
+      cv = cv.replace(/$/, "</spoiler>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function strongConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt12 = document.getElementById('opt12')
+  cv = cv.replace(/\t/g, "    ");
+    if (opt12.checked) {cv = cv.replace(/^/, "<strong>");
+      cv = cv.replace(/$/, "</strong>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function emConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt13 = document.getElementById('opt13')
+  cv = cv.replace(/\t/g, "    ");
+    if (opt13.checked) {cv = cv.replace(/^/, "<em>");
+      cv = cv.replace(/$/, "</em>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+
+function uConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt14 = document.getElementById('opt14')
+  cv = cv.replace(/\t/g, "    ");
+    if (opt14.checked) {cv = cv.replace(/^/, "<u>");
+      cv = cv.replace(/$/, "</u>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function strikeConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt15 = document.getElementById('opt15')
+  cv = cv.replace(/\t/g, "    ");
+    if (opt15.checked) {cv = cv.replace(/^/, "<strike>");
+      cv = cv.replace(/$/, "</strike>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function embedConvert() {
+var ctarea = document.getElementById('codes2'),
+    cv = ctarea.value,
+    opt20 = document.getElementById('opt20')
+  cv = cv.replace(/\t/g, "    ");
+    if (opt20.checked){ cv = cv.replace(/^/, "<iframe src=\"https://embed.disqus.com/p/");
+      cv = cv.replace(/$/, "\" style=\"border:0;width:100%;height:300px;\" seamless=\"seamless\" scrolling=\"no\" allowtransparency=\"true\"><\/iframe>");
+  ctarea.value = cv;
+  ctarea.focus();
+  document.getElementById("button-link2")
+        .style.display = "inline-block"}
+};
+function showParser2(){
+  document.getElementById("parser2").style.display = "block";
+  document.getElementById("show-parse2").style.display = "none";
+  document.getElementById("hide-parse2").style.display = "inline-block";
+}
+function hideParser2(){
+  document.getElementById("parser2").style.display = "none";
+  document.getElementById("show-parse2").style.display = "inline-block";
+  document.getElementById("hide-parse2").style.display = "none";
+}
+
+function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://cdn.rawgit.com/KompiAjaib/kompi-js/c909b5ed/clipboardjs_disqus.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;
