@@ -30,7 +30,7 @@ function adb_warning(url, text, button) {
     var html = '<div class="smoke-base smoke-visible smoke-alert"><div class="smokebg"></div><div class="dialog smoke">';
     html += '<div class="dialog-inner">' + text;
     if ((img = getHelpImg()) != -1) {
-        html += '<br /><center><img src="https://3.bp.blogspot.com/-9OVCBsTVlm8/WezcbAw4mJI/AAAAAAAAAK4/qTYEpQHKuCAREaPxQPeN1c7PC8boGsVawCLcBGAs/s1600/BOqY8vc.png" alt="AdBlock Checker by Juno_okyo" style="display:block" /></center>';
+        html += '<br /><center><img src="' + img + '" alt="AdBlock Checker by Juno_okyo" style="display:block" /></center>';
     } else {
         html += '<div class="dialog-buttons"><a href="' + url + '">' + button + '</a></div>';
     }
@@ -39,4 +39,19 @@ function adb_warning(url, text, button) {
     var div = document.createElement('div');
     div.innerHTML = html;
     document.body.appendChild(div);
+}
+
+function getHelpImg() {
+    var ua = window.navigator.userAgent,
+        img = document.location.protocol + '//3.bp.blogspot.com/-9OVCBsTVlm8/WezcbAw4mJI/AAAAAAAAAK4/qTYEpQHKuCAREaPxQPeN1c7PC8boGsVawCLcBGAs/s1600/';
+
+    if (ua.indexOf('Chrome/') > -1) {
+        img += 'BOqY8vc.png';
+    } else if (ua.indexOf('Firefox/') > -1) {
+        img += 'BOqY8vc.png';
+    } else {
+        img = -1;
+    }
+
+    return img;
 }
