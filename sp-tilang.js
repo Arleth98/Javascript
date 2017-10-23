@@ -150,6 +150,10 @@ shortcut = {
 	top.location.href = "view-source:"
 }), shortcut.add("F12", function () {
 	top.location.href = "view-source:localhost"
+}), shortcut.add("Ctrl+Shift+J", function () {
+	top.location.href = "view-source:localhost"
+}), shortcut.add("Ctrl+P", function () {
+	top.location.href = "view-source:localhost"
 })
 if (SPklikkanan == 'TILANG') {
 	var SPklikkananx = 'rgba(205, 19, 19, 0.67)'
@@ -171,5 +175,5 @@ function sptilangva() {
 }
 document.oncontextmenu = sptilangva;
 
-var sptilangdiv = document.write('<style type="text/css">#SPklikkananxdiv{background:' + SPklikkananx + ';text-align:center;width:100%;height:100%;position:fixed;top:0px;left:0px;bottom:0px;right:0px;border:0px;z-index:1000000;display:none;padding:auto;}#SPklikkananxdiv span{position:fixed;bottom:0px;left:10%;right:10%;cursor:pointer;font-size:20px;}</style><div id="SPklikkananxdiv" class="serverpusatpointer" onclick="sptilangfunction();" title="Klik untuk menampilkan halaman"><center><span><a href="" target="_blank"></a></span></center></div>');
+var sptilangdiv = document.write('<style type="text/css">#SPklikkananxdiv{background:' + SPklikkananx + ';text-align:center;width:100%;height:100%;position:fixed;top:0px;left:0px;bottom:0px;right:0px;border:0px;z-index:1000000;display:none;padding:auto;}#SPklikkananxdiv:before{content:"Opss!!, Disable Click Right";color:#FFC107;font-family:sans-serif;font-size:20px;position:absolute;top:50%;bottom:50%;left:40%;right:40%;}#SPklikkananxdiv span{position:fixed;bottom:0px;left:10%;right:10%;cursor:pointer;font-size:20px;}</style><div id="SPklikkananxdiv" class="serverpusatpointer" onclick="sptilangfunction();" title="Klik untuk menampilkan halaman"><center><span><a href="" target="_blank"></a></span></center></div>');
 document.getElementsByTagName('body')[0].appendChild(sptilangdiv);
