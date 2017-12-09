@@ -1,0 +1,1 @@
+$searchlink.on("click",function(b){var a=b?b.target:window.event.srcElement;if($(a).attr("id")=="searchlink"){if($(this).hasClass("open")){$(this).removeClass("open")}else{$(this).addClass("open")}}});
