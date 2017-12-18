@@ -1,6 +1,14 @@
+<HTML>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="all">
 
 <style>
+a:link,a:visited{color:#222;text-decoration:none;outline:none;transition:all 0.25s}
+a:link:hover{text-decoration:underline}
+body{font-family:sans-serif}
 /* Ongoing List Auto Index By Arlethdesign
    ======================================= */
 #rex-post ul{margin:auto;padding:0;list-style:none}
@@ -8,8 +16,10 @@
 #rex-post h3{font-size:13px;margin:auto;padding:0}
 #rex-post .rex-details{color:#979797;display:block;font-size:12px;padding:3px;padding-left:0;}
 #rex-post .rex-details span:before{content:'\f017';font-family:fontawesome;padding-right:3px}
+@media
 </style>
-
+</head>
+<body>
 <div id='rex-post'>
 <script type="text/javascript">//<![CDATA[
 var posts_no = 8;
@@ -45,3 +55,5 @@ var Label = getQueryVariable("Tag");
 document.write("<scr" + "ipt type=\"text/javascript\" src=\""+feedaddress+"/feeds/posts/default/-/"+Label+"?orderby=published&alt=json-in-script&callback=showlatestpostswiththumbs\"></scr" + "ipt>");
 //]]></script>
 </div>
+</body>
+</HTML>
