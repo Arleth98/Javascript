@@ -1,0 +1,47 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+/* Ongoing List Auto Index By Arlethdesign
+   ======================================= */
+#rex-post ul{margin:auto;padding:0;list-style:none}
+#rex-post ul li{line-height:normal;margin:5px;list-style:none;float:left;display:inline-block;width:23%}
+#rex-post h3{font-size:13px;margin:auto;padding:0}
+#rex-post .rex-details{color:#979797;display:block;font-size:12px;padding:3px;padding-left:0;}
+#rex-post .rex-details span:before{content:'\f017';font-family:fontawesome;padding-right:3px}
+</style>
+
+<div id='rex-post'>
+<script type="text/javascript">//<![CDATA[
+var posts_no = 8;
+var showpoststhumbs = true;var readmorelink = false;var showcommentslink = false;var posts_date = true;var post_summary = false;var summary_chars = 0;function showlatestpostswiththumbs(t){document.write('<ul>');for(var e=0;e<posts_no;e++){var r,n=t.feed.entry[e],i=n.title.$t;if(e==t.feed.entry.length)break;for(var o=0;o<n.link.length;o++){if("replies"==n.link[o].rel&&"text/html"==n.link[o].type)var l=n.link[o].title,m=n.link[o].href;if("alternate"==n.link[o].rel){r=n.link[o].href;break}}var u;try{u=n.media$thumbnail.url}catch(h){s=n.content.$t,a=s.indexOf("<img"),b=s.indexOf('src="',a),c=s.indexOf('"',b+130),d=s.substr(b+130,c-b-130),u=-130!=a&&-130!=b&&-130!=c&&""!=d?d:"https://2.bp.blogspot.com/-C3Mo0iKKiSw/VGdK808U7rI/AAAAAAAAAmI/W7Ae_dsEVAE/s1600/no-thumb.png"}
+var p=n.published.$t,f=p.substring(0,4),g=p.substring(5,7),v=p.substring(8,10),w=new Array;if(w[1]="January",w[2]="February",w[3]="March",w[4]="April",w[5]="May",w[6]="June",w[7]="July",w[8]="August",w[9]="September",w[10]="October",w[11]="November",w[12]="December",document.write('<li><a href="'+r+'">'),
+1==showpoststhumbs&&document.write('<img class="recent-post-thumb" src="'+u+'"/>'),
+document.write('<h3><span>'+i+"</span></h3></a>"),
+"content"in n)var A=n.content.$t;else if("summary"in n)var A=n.summary.$t;else var A="";
+var k=/<\S[^>]*>/g;if(A=A.replace(k,""),1==post_summary)if(A.length<summary_chars)document.write(A);else{A=A.substring(0,summary_chars);
+var y=A.lastIndexOf(" ");A=A.substring(0,y),
+document.write(A+"...")}var _="",$=0;
+document.write('<div class="rex-details"><span class="dett">'),
+1==posts_date&&(_=_+w[parseInt(g,10)]+" "+v+" "+f,$=1),
+1==readmorelink&&(1==$&&(_+=" </span>"),
+_=_+'<span class="redmore"><a href="'+r+'" class="urls" target ="_top">Selengkapnya</a></span>',$=1),
+1==showcommentslink&&(1==$&&(_+=" <br> "),"1 Comments"==l&&(l="1 Comment"),"0 Comments"==l&&(l="No Comments"),
+l='<a href="'+m+'" target ="_top">'+l+"</a>",_+=l,$=1),
+document.write(_),document.write("</div>"),document.write("</li>")}document.write("</ul>")}
+$(document).ready(function() {$('img.recent-post-thumb').attr('src', function(i, src) 
+{return src.replace( 's72-c', 'w190-h110-c' );});});
+// Get
+function getQueryVariable(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false);
+}
+var feedaddress = getQueryVariable("Url");
+var Label = getQueryVariable("Tag");
+document.write("<scr" + "ipt type=\"text/javascript\" src=\""+feedaddress+"/feeds/posts/default/-/"+Label+"?orderby=published&alt=json-in-script&callback=showlatestpostswiththumbs\"></scr" + "ipt>");
+//]]></script>
+</div>
